@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEBSITE DEVELOPER</title>
+    <style>
+        h1 {
+            color: blue;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let firstName = document.forms["registerForm"]["first_name"].value;
+            let lastName = document.forms["registerForm"]["last_name"].value;
+            let email = document.forms["registerForm"]["email"].value;
+            let password = document.forms["registerForm"]["password"].value;
+
+            console.log("Validating form...");
+            console.log("First Name:", firstName);
+            console.log("Last Name:", lastName);
+            console.log("Email:", email);
+            console.log("Password:", password);
+
+            if (firstName == "" || lastName == "" || email == "" || password == "") {
+                alert("Please fill out all required fields.");
+                console.log("Validation failed: Some fields are empty.");
+                return false;
+            }
+            alert("Registration successful!");
+            console.log("Validation passed: Form submitted successfully.");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to this Website Developer Registration Form</h1>
+    <h2>If you register correctly, we will learn about:</h2>
+    <h2>HTML, CSS, and JavaScript</h2>
+    <h2 style="color: blue;">Front-end developers must know this:</h2>
+    <ol>
+        <li>HyperText Markup Language (HTML)</li>
+        <li>Cascading Style Sheets (CSS)</li>
+        <li>JavaScript</li>
+    </ol>
+
+    <h2>You should fill out the form correctly:</h2>
+    <form name="registerForm" action="process.html" method="get" onsubmit="console.log('Form submitted'); return validateForm();">
+        <label><h2 style="color:blueviolet">First Name</h2></label>
+        <input type="text" name="first_name" placeholder="Enter first name" oninput="console.log('First Name input:', this.value)"><br>
+        
+        <h2>Last Name</h2>
+        <input type="text" name="last_name" placeholder="Enter last name" oninput="console.log('Last Name input:', this.value)"><br>
+        
+        <h2 style="color: blueviolet;">Your Gender</h2>
+        <input type="radio" name="gender" value="male" onclick="console.log('Gender selected: Male')"> Male
+        <input type="radio" name="gender" value="female" onclick="console.log('Gender selected: Female')"> Female
+        <input type="radio" name="gender" value="other" onclick="console.log('Gender selected: Other')"> Other<br>
+        
+        <h2 style="color:black">Department</h2>
+        <select name="department" onchange="console.log('Department selected:', this.value)">
+            <option>Information Systems</option>
+            <option>Information Technology</option>
+            <option>Information Science</option>
+            <option>Computer Science</option>
+            <option>Other</option>
+        </select><br>
+        
+        <h2 style="color: aqua;">Year</h2>
+        <input type="radio" name="year" value="1st" onclick="console.log('Year selected: 1st year')"> 1st year<br>
+        <input type="radio" name="year" value="2nd" onclick="console.log('Year selected: 2nd year')"> 2nd year<br>
+        <input type="radio" name="year" value="3rd" onclick="console.log('Year selected: 3rd year')"> 3rd year<br>
+        <input type="radio" name="year" value="4th" onclick="console.log('Year selected: 4th year')"> 4th year<br>
+        <input type="radio" name="year" value="above" onclick="console.log('Year selected: Above 4th year')"> Above 4th year<br>
+        
+        <h2 style="color: green;">Email</h2>
+        <input type="email" name="email" placeholder="Enter email" oninput="console.log('Email input:', this.value)"><br>
+        
+        <h2 style="color: green;">Password</h2>
+        <input type="password" name="password" placeholder="Enter password" oninput="console.log('Password input:', this.value)"><br>
+        
+        <h2 style="color:green;">Which languages are you familiar with?</h2>
+        <input type="checkbox" name="languages" value="html" onclick="console.log('Checked HTML')"> HTML<br>
+        <input type="checkbox" name="languages" value="css" onclick="console.log('Checked CSS')"> CSS<br>
+        <input type="checkbox" name="languages" value="javascript" onclick="console.log('Checked JavaScript')"> JavaScript<br>
+        
+        <h2 style="color: rgb(50, 205, 179);">For more information, click the link below:</h2>
+        <a href="https://t.me/sam5304" target="_blank">Contact me</a><br>
+        
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset" onclick="console.log('Form reset')">
+    </form>
+</body>
+</html>
